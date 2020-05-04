@@ -15,7 +15,7 @@ def main():
 
 
 def run():
-    sample_path = Globals.config['TEST']['sample_file']
+    sample_path = Globals.config['Dataset']['test_sample']
     files = utils.get_files(sample_path)
 
     for filename in files:
