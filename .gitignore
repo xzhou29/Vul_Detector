@@ -40,3 +40,30 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# LOG
+*.log
+
+# Distribution / packaging
+.Python
+.idea/
+__pycache__/
+build/
+develop-eggs/
+dist/
+results/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+venv/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
