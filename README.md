@@ -11,6 +11,10 @@ To install, clone this repo. Then install dependencies by running
 
 # How to run
 
+## Modify Config.ini
+
+Make sure everything is correct on Config file.
+
 ## Run VulBench
 ```
 usage: vulbench [-h] [-v] [-f CONFIG_FILE]
