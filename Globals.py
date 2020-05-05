@@ -43,7 +43,7 @@ def setup_logger():
     logger.addHandler(file_handler)
 
 
-def setup_globals():
+def setup():
     global args
     global config
     global summary
@@ -58,5 +58,5 @@ def setup_globals():
     setup_logger()
 
 
-def destroy_globals():
+def destroy():
     summary.close()
