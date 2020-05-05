@@ -19,12 +19,13 @@ def run():
     files = utils.get_files(sample_path)
 
     for filename in files:
-        # START - extract vulnerable statements
-        flaws, line_numbers, flaw_descriptions = features.find_vulnerable_statements(filename)
-        for (flaw, line_number, flaw_description) in zip(flaws, line_numbers, flaw_descriptions):
-            # print(flaw, line_number, flaw_description)
-            Globals.logger.info(str(line_number) + ": " + str(flaw))
-        # END - extract vulnerable statements
+        # START - extract vulnerable statements for SARD Dataset
+        if Globals.config['Vulnerable Statements']['SARD']:
+            flaws, line_numbers, flaw_descriptions = features.find_vulnerable_statements(filename)
+            for (flaw, line_number, flaw_description) in zip(flaws, line_numbers, flaw_descriptions):
+                # print(flaw, line_number, flaw_description)
+                Globals.logger.info(str(line_number) + ": " + str(flaw))
+        # END - extract vulnerable statements for SARD Dataset
 
         sliced_program = run_slicer(filename)
 
