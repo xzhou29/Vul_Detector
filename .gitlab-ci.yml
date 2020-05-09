@@ -11,6 +11,8 @@ test:
   - apt-get install -y python3-dev python3-pip
   - pip3 install -r requirements.txt
   - python3 main.py
+  - cd tests/unit_tests
+  - python3 test_features.py
 
 staging:
   stage: deploy
