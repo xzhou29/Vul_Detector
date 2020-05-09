@@ -1,0 +1,23 @@
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  - apt-get install -y python-dev python-pip
+  - pip install -r requirements.txt
+
+staging:
+  stage: deploy
+  script:
+  - apt-get update -qy
+  only:
+  - master
+
+production:
+  stage: deploy
+  script:
+  - apt-get update -qy
+  only:
+  - tags
