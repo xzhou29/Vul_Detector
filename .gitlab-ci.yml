@@ -15,6 +15,10 @@ test:
   - vulbench
   - cd tests/unit_tests
   - python3 test_features.py
+  - apt-get install gradle
+  - apt-get install graphviz
+  - apt-get install graphviz-dev
+  - ./slicers/C-Code-Slicer/joern/build.sh
 
 staging:
   stage: deploy
