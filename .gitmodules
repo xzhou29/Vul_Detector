@@ -1,0 +1,6 @@
+[submodule "C-Code-Slicer"]
+	path = C-Code-Slicer
+	url = https://github.com/saikat107/C-Code-Slicer.git
+[submodule "modules/joern"]
+	path = modules/joern
+	url = https://github.com/octopus-platform/joern.git

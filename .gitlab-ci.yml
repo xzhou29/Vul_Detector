@@ -10,15 +10,17 @@ test:
   - apt-get update -qy
   - apt-get install -y python3-dev python3-pip
   - pip3 install -r requirements.txt
+  - apt-get install gradle --yes
+  - apt-get install graphviz --yes
+  - apt-get install graphviz-dev --yes
+  - cd modules/joern
+  - ./build.sh
+  - cd ../../
   - python3 main.py
   - pip3 install .
   - vulbench
   - cd tests/unit_tests
   - python3 test_features.py
-  - apt-get install gradle
-  - apt-get install graphviz
-  - apt-get install graphviz-dev
-  - ./slicers/C-Code-Slicer/joern/build.sh
 
 staging:
   stage: deploy

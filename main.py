@@ -61,16 +61,23 @@ def run_slicer(filename):
 
     sliced_program = []
     # START - backward slicer
-    if Globals.config['Slicer']['backward_slicer']:
+    if Globals.config['Slicer']['backward-slicer']:
         Globals.logger.info("Backward Slicer Running for " + filename)
         sliced_program = slicers.backward_slicer(filename)
     # END - backward slicer
 
     # START - dg slicer
-    elif Globals.config['Slicer']['dg_slicer']:
+    elif Globals.config['Slicer']['dg-slicer']:
+        print(Globals.config['Slicer']['dg-slicer'])
         Globals.logger.info("dg Slicer Running for " + filename)
         sliced_program = slicers.dg_slicer(filename)
     # END - backward slicer
+
+    # START - C-Code-Slicer
+    elif Globals.config['Slicer']['C-Code-Slicer']:
+        Globals.logger.info("C-Code-Slicer Running for " + filename)
+        sliced_program = slicers.c_code_slicer_slicer(filename)
+    # END - C-Code-Slicer
 
     return sliced_program
 
