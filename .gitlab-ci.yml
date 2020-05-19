@@ -1,0 +1,37 @@
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  # this configures Django application to use attached postgres database that is run on `postgres` host
+  - export DATABASE_URL=postgres://postgres:@postgres:5432/python3-test-app
+  - apt-get update -qy
+  - apt-get install -y python3-dev python3-pip
+  - pip3 install -r requirements.txt
+  - apt-get install gradle --yes
+  - apt-get install graphviz --yes
+  - apt-get install graphviz-dev --yes
+  - cd modules/joern
+  - ./build.sh
+  - cd ../../
+  - python3 main.py
+  - pip3 install .
+  - vulbench
+  - cd tests/unit_tests
+  - python3 test_features.py
+
+staging:
+  stage: deploy
+  script:
+  - apt-get update -qy
+  only:
+  - master
+
+production:
+  stage: deploy
+  script:
+  - apt-get update -qy
+  only:
+  - tags

@@ -1,5 +1,13 @@
 VulBench
 
+# Dependencies
+
+## For Joern-based slicer
+
+1. Gradle (sudo apt-get install gradle)
+2. Graphviz (sudo apt install graphviz-dev)
+
+
 # Installation
 
 VulBench requires Python 3.6. We have not tested on other versions.
